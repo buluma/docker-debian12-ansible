@@ -17,6 +17,9 @@ RUN apt-get update \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
     && apt-get clean
 
+# create virtual env
+RUN python3 -m venv /opt/venv
+
 # Remove existing ansible
 # RUN pip3 uninstall ansible && pip3 uninstall ansible-base
 
