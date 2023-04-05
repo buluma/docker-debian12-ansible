@@ -28,7 +28,7 @@ RUN . /opt/venv/bin/activate
 RUN pip3 install --upgrade pip --break-system-packages
 
 # Install Ansible via pip.
-RUN pip3 install $pip_packages
+RUN pip3 install $pip_packages --break-system-packages
 
 COPY initctl_faker .
 RUN chmod +x initctl_faker && rm -fr /sbin/initctl && ln -s /initctl_faker /sbin/initctl
