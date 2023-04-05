@@ -19,6 +19,7 @@ RUN apt-get update \
 
 # create virtual env
 RUN python3 -m venv /opt/venv
+RUN . /opt/venv/bin/activate
 
 # Remove existing ansible
 # RUN pip3 uninstall ansible && pip3 uninstall ansible-base
