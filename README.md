@@ -1,8 +1,8 @@
 # Debian 12 (Bookworm) Ansible Test Image
 
-[![CI](https://github.com/buluma/docker-debian12-ansible/workflows/Build/badge.svg?branch=main&event=push)](https://github.com/buluma/docker-debian12-ansible/actions?query=workflow%3ABuild) [![Docker pulls](https://img.shields.io/docker/pulls/buluma/docker-debian12-ansible)](https://hub.docker.com/r/buluma/docker-debian12-ansible/)
+[![Build](https://github.com/buluma/docker-debian12-ansible/actions/workflows/build.yml/badge.svg)](https://github.com/buluma/docker-debian12-ansible/actions/workflows/build.yml) [![Docker pulls](https://img.shields.io/docker/pulls/buluma/docker-debian12-ansible)](https://hub.docker.com/r/buluma/docker-debian12-ansible/)
 
-Debian 11 (Bullseye) Docker container for Ansible playbook and role testing.
+Debian 12 (Bookworm) Docker container for Ansible playbook and role testing.
 
 ## Tags
 
@@ -21,7 +21,7 @@ This image is built on Docker Hub automatically any time the upstream OS contain
 ## How to Use
 
   1. [Install Docker](https://docs.docker.com/engine/installation/).
-  2. Pull this image from Docker Hub: `docker pull buluma/docker-debian12-ansible:latest` (or use the image you built earlier, e.g. `debian11-ansible`).
+  2. Pull this image from Docker Hub: `docker pull buluma/docker-debian12-ansible:latest` (or use the image you built earlier, e.g. `debian12-ansible`).
   3. Run a container from the image: `docker run --detach --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro buluma/docker-debian12-ansible:latest` (to test my Ansible roles, I add in a volume mounted from the current working directory with ``--volume=`pwd`:/etc/ansible/roles/role_under_test:ro``).
   4. Use Ansible inside the container:
     a. `docker exec --tty [container_id] env TERM=xterm ansible --version`
