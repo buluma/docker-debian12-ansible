@@ -25,7 +25,7 @@ RUN . /opt/venv/bin/activate
 # RUN pip3 uninstall ansible && pip3 uninstall ansible-base
 
 # Upgrade pip to latest version.
-RUN pip3 install --upgrade pip
+RUN pip3 install --upgrade pip --break-system-packages
 
 # Install Ansible via pip.
 RUN pip3 install $pip_packages
