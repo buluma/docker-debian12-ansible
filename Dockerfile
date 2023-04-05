@@ -4,10 +4,6 @@ LABEL build_date="2023-04-04"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-ENV VIRTUAL_ENV=/opt/venv
-RUN python3 -m venv $VIRTUAL_ENV
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
-
 ENV pip_packages "ansible cryptography"
 
 # Install dependencies.
@@ -24,8 +20,9 @@ RUN apt-get update \
 # create virtual env
 # RUN python3 -m venv /opt/venv
 # RUN . /opt/venv/bin/activate
-
-
+ENV VIRTUAL_ENV=/opt/venv
+RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # Remove existing ansible
 # RUN pip3 uninstall ansible && pip3 uninstall ansible-base
